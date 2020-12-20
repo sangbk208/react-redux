@@ -1,5 +1,15 @@
 import {combineReducers} from 'redux';
 
-export default combineReducers({
+const fetchPostsReducer = (fetchPosts = null ,action) =>{
+    console.log(fetchPosts);
+    switch (action.type) {
+        case "FETCH_POSTS":
+            return action.payload;
+        default:
+            return fetchPosts;
+    }
+}
 
+export default combineReducers({
+    fetchPosts: fetchPostsReducer,
 });
